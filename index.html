@@ -212,6 +212,12 @@
                                 switch (feature.geometry.type) {
                                 case "MultiPolygon": return {color: "#ff9900"};
                                 }
+                            },
+                        onEachFeature: function(feature, layer) {
+                            if (feature.properties) {
+                            layer.bindPopup('<h1 class="judultgt">Area Perbaikan Jalan</h1>' +'<p style="text-align:center;">Luas: <strong>' + feature.properties.luasan + '</strong> m&sup2;</p>'
+                            );
+                            }
                             }});
                         var overlayMaps = {
                         "Titik Kerusakan Tangul" : titiktanggul,
